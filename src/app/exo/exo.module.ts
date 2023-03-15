@@ -13,9 +13,12 @@ import { FormsModule } from '@angular/forms';
 import { StockManagerComponent } from './components/stock-manager/stock-manager.component';
 import { InventaireComponent } from './components/stock-manager/inventaire/inventaire.component';
 import { EnVenteComponent } from './components/stock-manager/en-vente/en-vente.component';
-import { ExoInputOutputComponent } from './components/exo-input-output/exo-input-output.component';
-import { ExoIoFormComponent } from './components/exo-input-output/exo-io-form/exo-io-form.component';
-import { ExoIoListComponent } from './components/exo-input-output/exo-io-list/exo-io-list.component';
+import { ExoNamesComponent } from './components/exo-names/exo-names.component';
+import { ExoNamesFormComponent } from './components/exo-names/exo-names-form/exo-names-form.component';
+import { ExoNamesListComponent } from './components/exo-names/exo-names-list/exo-names-list.component';
+import {NameService} from "../services/name.service";
+import { PizzaComponent } from './components/pizza/pizza.component';
+import {PizzaService} from "../services/pizza.service";
 
 @NgModule({
   declarations: [
@@ -30,14 +33,19 @@ import { ExoIoListComponent } from './components/exo-input-output/exo-io-list/ex
     StockManagerComponent,
     InventaireComponent,
     EnVenteComponent,
-    ExoInputOutputComponent,
-    ExoIoFormComponent,
-    ExoIoListComponent
+    ExoNamesComponent,
+    ExoNamesFormComponent,
+    ExoNamesListComponent,
+    PizzaComponent
   ],
   imports: [
     CommonModule,
     FormsModule,
     ExoRoutingModule
+  ],
+  providers: [
+    NameService,
+    PizzaService
   ]
 })
 export class ExoModule { }

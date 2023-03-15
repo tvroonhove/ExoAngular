@@ -8,7 +8,8 @@ import { ExoDirectiveComponent } from "./components/exo-directive/exo-directive.
 import { ExoComponent } from "./components/exo/exo.component";
 import { RoutingComponent } from "./components/routing/routing.component";
 import { StockManagerComponent } from "./components/stock-manager/stock-manager.component";
-import {ExoInputOutputComponent} from "./components/exo-input-output/exo-input-output.component";
+import {ExoNamesComponent} from "./components/exo-names/exo-names.component";
+import {PizzaComponent} from "./components/pizza/pizza.component";
 
 
 const routes: Routes = [
@@ -20,7 +21,8 @@ const routes: Routes = [
         { path: 'dir-struct', component: ExoDirectiveStructComponent },
         { path: 'routing/:nbr', component: RoutingComponent, canMatch:[numberParamGuard('nbr')] },
         { path: 'comm', component: StockManagerComponent },
-        { path: 'input-output', component: ExoInputOutputComponent}
+        { path: 'names', component: ExoNamesComponent},
+        { path: 'pizza', component: PizzaComponent}
     ]}
 ]
 

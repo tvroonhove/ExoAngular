@@ -13,6 +13,9 @@ import { FormsModule } from '@angular/forms';
 import { StockManagerComponent } from './components/stock-manager/stock-manager.component';
 import { InventaireComponent } from './components/stock-manager/inventaire/inventaire.component';
 import { EnVenteComponent } from './components/stock-manager/en-vente/en-vente.component';
+import { ExoInputOutputComponent } from './components/exo-input-output/exo-input-output.component';
+import { ExoIoFormComponent } from './components/exo-input-output/exo-io-form/exo-io-form.component';
+import { ExoIoListComponent } from './components/exo-input-output/exo-io-list/exo-io-list.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,10 @@ import { EnVenteComponent } from './components/stock-manager/en-vente/en-vente.c
     RoutingComponent,
     StockManagerComponent,
     InventaireComponent,
-    EnVenteComponent
+    EnVenteComponent,
+    ExoInputOutputComponent,
+    ExoIoFormComponent,
+    ExoIoListComponent
   ],
   imports: [
     CommonModule,

@@ -1,0 +1,8 @@
+<app-exo-io-form
+  (add)="onAdd($event)"
+></app-exo-io-form>
+
+<app-exo-io-list
+  *ngFor="let name of names"
+  [name]="name"
+></app-exo-io-list>

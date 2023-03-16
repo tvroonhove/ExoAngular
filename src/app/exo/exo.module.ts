@@ -19,6 +19,8 @@ import { ExoNamesListComponent } from './components/exo-names/exo-names-list/exo
 import {NameService} from "../services/name.service";
 import { PizzaComponent } from './components/pizza/pizza.component';
 import {PizzaService} from "../services/pizza.service";
+import {ShoppingListService} from "../services/shopping-list.service";
+import { ShoppingListComponent } from './components/shopping-list/shopping-list.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,8 @@ import {PizzaService} from "../services/pizza.service";
     ExoNamesComponent,
     ExoNamesFormComponent,
     ExoNamesListComponent,
-    PizzaComponent
+    PizzaComponent,
+    ShoppingListComponent
   ],
   imports: [
     CommonModule,
@@ -45,7 +48,8 @@ import {PizzaService} from "../services/pizza.service";
   ],
   providers: [
     NameService,
-    PizzaService
+    PizzaService,
+    ShoppingListService
   ]
 })
 export class ExoModule { }

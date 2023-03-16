@@ -1,1 +1,9 @@
-<p>pizza works!</p>
+<input type="text" [(ngModel)]="value">
+<button (click)="addPizza()">ajouter</button>
+
+<ul>
+  <li *ngFor="let pizza of pizzas">
+    {{pizza.id}} || {{pizza.name}} ||
+    <button (click)="deletePizza(pizza.id)">X</button>
+  </li>
+</ul>

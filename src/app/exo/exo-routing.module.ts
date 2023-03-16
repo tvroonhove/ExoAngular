@@ -10,6 +10,7 @@ import { RoutingComponent } from "./components/routing/routing.component";
 import { StockManagerComponent } from "./components/stock-manager/stock-manager.component";
 import {ExoNamesComponent} from "./components/exo-names/exo-names.component";
 import {PizzaComponent} from "./components/pizza/pizza.component";
+import {ShoppingListComponent} from "./components/shopping-list/shopping-list.component";
 
 
 const routes: Routes = [
@@ -22,7 +23,8 @@ const routes: Routes = [
         { path: 'routing/:nbr', component: RoutingComponent, canMatch:[numberParamGuard('nbr')] },
         { path: 'comm', component: StockManagerComponent },
         { path: 'names', component: ExoNamesComponent},
-        { path: 'pizza', component: PizzaComponent}
+        { path: 'pizza', component: PizzaComponent},
+        { path: 'shopping-list', component: ShoppingListComponent}
     ]}
 ]
 

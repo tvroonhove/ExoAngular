@@ -9,7 +9,7 @@ import { ExoRoutingModule } from './exo-routing.module';
 import { ExoComponent } from './components/exo/exo.component';
 import { ExoAccueilComponent } from './components/exo-accueil/exo-accueil.component';
 import { RoutingComponent } from './components/routing/routing.component';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { StockManagerComponent } from './components/stock-manager/stock-manager.component';
 import { InventaireComponent } from './components/stock-manager/inventaire/inventaire.component';
 import { EnVenteComponent } from './components/stock-manager/en-vente/en-vente.component';
@@ -44,7 +44,8 @@ import { ShoppingListComponent } from './components/shopping-list/shopping-list.
   imports: [
     CommonModule,
     FormsModule,
-    ExoRoutingModule
+    ExoRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [
     NameService,

@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {ShoppingListService} from "../../../services/shopping-list.service";
 import {Item} from "../../../models/item";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-shopping-list',
@@ -9,10 +10,16 @@ import {Item} from "../../../models/item";
 })
 export class ShoppingListComponent {
   items : Item[] = this.service.items
-  name = ''
-  price = 0
-  promo = false
-  totalPrice : number = 0
+  form: FormGroup = new FormGroup({
+    name: new FormControl('',[
+      Validators.required,
+      Validators.minLength(5),
+      Validators.maxLength(20)
+    ]),
+    price: new FormControl(0, Validators.min(0)),
+    promo: new FormControl(false)
+  })
+  totalPrice : number = this.service.totalCartPrice
 
   constructor(
     private readonly service: ShoppingListService
@@ -24,11 +31,13 @@ export class ShoppingListComponent {
   }
 
   addItem() {
-    this.service.addItem(this.name,this.price,this.promo)
+    this.service.addItem(this.form.value.name,this.form.value.price,this.form.value.promo)
+    this.form.reset({
+      name: '',
+      price: 0,
+      promo: false
+    })
     this.update()
-    this.name = ''
-    this.price = 0
-    this.promo = false
   }
 
   addOne(item: Item) {

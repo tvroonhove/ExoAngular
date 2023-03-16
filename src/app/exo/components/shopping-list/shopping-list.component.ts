@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {ShoppingListService} from "../../../services/shopping-list.service";
 import {Item} from "../../../models/item";
 
@@ -7,8 +7,8 @@ import {Item} from "../../../models/item";
   templateUrl: './shopping-list.component.html',
   styleUrls: ['./shopping-list.component.scss']
 })
-export class ShoppingListComponent implements OnInit {
-  items : Item[] = []
+export class ShoppingListComponent {
+  items : Item[] = this.service.items
   name = ''
   price = 0
   promo = false
@@ -18,18 +18,14 @@ export class ShoppingListComponent implements OnInit {
     private readonly service: ShoppingListService
   ) {}
 
-  ngOnInit(): void {
+  private update() {
     this.items = this.service.items
-    this.updatePrice()
-  }
-
-  private updatePrice() {
     this.totalPrice = this.service.totalCartPrice
   }
 
   addItem() {
     this.service.addItem(this.name,this.price,this.promo)
-    this.updatePrice()
+    this.update()
     this.name = ''
     this.price = 0
     this.promo = false
@@ -37,16 +33,16 @@ export class ShoppingListComponent implements OnInit {
 
   addOne(item: Item) {
     item.addOne()
-    this.updatePrice()
+    this.update()
   }
 
   removeOne(item: Item) {
     this.service.removeOne(item)
-    this.updatePrice()
+    this.update()
   }
 
   deleteItem(item: Item) {
     this.service.deleteItem(item)
-    this.updatePrice()
+    this.update()
   }
 }

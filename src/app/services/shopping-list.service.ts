@@ -24,7 +24,7 @@ export class ShoppingListService {
   }
 
   get items() : Item[] {
-    return this._items
+    return [...this._items]
   }
 
   get totalCartPrice() : number {
